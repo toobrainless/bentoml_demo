@@ -22,7 +22,7 @@ BentoML is useful if you want to:
 - build a deployable artifact
 - containerize it without writing a lot of backend code
 
-This is especially nice if you do not want to spend much time on web frameworks or Docker setup.
+This is especially useful if you do not want to spend much time on web frameworks or Docker setup.
 
 ### For more advanced users
 
@@ -34,12 +34,25 @@ BentoML also includes features that are more relevant for real model serving wor
 - deployment-friendly packaging
 - monitoring and service-level tooling
 
-So it is not just “a quick API wrapper”, but a more specialized framework for ML inference services.
+So it is not just a quick API wrapper, but a more specialized framework for ML inference services.
+
+## What is a Bento artifact?
+
+A Bento artifact, or simply a **Bento**, is a versioned, deployable package of a BentoML service.
+
+It usually includes:
+
+- service code
+- Python dependencies
+- model artifacts
+- runtime configuration
+
+You can think of it as a packaged snapshot of your ML service that can later be containerized and deployed.
 
 ## Notes
 
 For a very small project, a hand-written Dockerfile can still be simpler or even faster to build.  
-This demo is more about showing the BentoML workflow and its serving-oriented features.
+This demo is mostly about showing the BentoML workflow and its serving-oriented features.
 
 ## References
 

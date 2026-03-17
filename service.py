@@ -3,17 +3,30 @@ from prometheus_client import Counter
 
 from src.classifier import YourToxicityClassifier
 
+
+CPU_IMAGE = bentoml.images.Image(
+    python_version="3.10",
+    lock_python_packages=False,
+    python_requirements="""
+--index-url https://download.pytorch.org/whl/cpu
+--extra-index-url https://pypi.org/simple
+
+torch==2.10.0
+transformers==5.3.0
+prometheus-client==0.24.1
+requests==2.32.5
+
+""",
+)
+
+
 INFERENCE_COUNT = Counter(
     "app_http_inference_count",
     "Total number of HTTP inference requests",
 )
 
 
-@bentoml.service(
-    image=bentoml.images.Image(python_version="3.11").python_packages(
-        "torch", "transformers", "prometheus-client"
-    ),
-)
+@bentoml.service(image=CPU_IMAGE)
 class ToxicService:
     def __init__(self) -> None:
         self.model = YourToxicityClassifier()

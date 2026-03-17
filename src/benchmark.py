@@ -6,8 +6,8 @@ import requests
 from requests import HTTPError
 
 
-URL_PLAIN = "http://localhost:5228/predict"
-URL_BATCHED = "http://localhost:5228/predict_batched"
+URL_PLAIN = "http://localhost:3000/predict"
+URL_BATCHED = "http://localhost:3000/predict_batched"
 
 BASE_TEXTS = [
     "thank you very much",

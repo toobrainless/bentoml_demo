@@ -11,14 +11,20 @@ class YourToxicityClassifier:
             device=device,
         )
 
-    def predict(self, text: str) -> dict:
-        result = self.classifier(text)[0]
+    def _postprocess(self, result: dict) -> dict:
         label = result["label"].lower()
         score = float(result["score"])
-
         is_toxic = ("toxic" in label) and (score > 0.5)
         return {
             "is_toxic": is_toxic,
-            "label": result["label"],
+            "classification_label": result["label"],
             "score": score,
         }
+
+    def predict(self, text: str) -> dict:
+        result = self.classifier(text)[0]
+        return self._postprocess(result)
+
+    def predict_many(self, texts: list[str]) -> list[dict]:
+        results = self.classifier(texts)
+        return [self._postprocess(result) for result in results]

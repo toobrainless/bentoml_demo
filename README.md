@@ -38,11 +38,6 @@ It includes:
 - model artifacts
 - runtime configuration
 
-### Notes
-
-For a very small project, a hand-written Dockerfile can still be simpler or faster to build.  
-This demo is mainly about the BentoML workflow and serving features.
-
 ## Demo Guide
 
 #### Structure

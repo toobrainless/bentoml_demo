@@ -3,7 +3,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 
-
 URL_PLAIN = "http://localhost:3000/predict"
 URL_BATCHED = "http://localhost:3000/predict_batched"
 

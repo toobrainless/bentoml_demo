@@ -1,8 +1,7 @@
 import bentoml
 from prometheus_client import Counter
 
-from .classifier import YourToxicityClassifier
-
+from src.classifier import YourToxicityClassifier
 
 INFERENCE_COUNT = Counter(
     "app_http_inference_count",

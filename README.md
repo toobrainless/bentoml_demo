@@ -41,8 +41,9 @@ It includes:
 #### Structure
 
 - `src/classifier.py` — model wrapper with plain Python inference methods
-- `src/service.py` — BentoML service layer exposing the model as an API
 - `src/benchmark.py` — small benchmark comparing plain requests and batched requests
+- `dummy_service.py` — simple example of BentoML service layer
+- `service.py` — working example for adaptive batching and docker
 
 #### Installation
 

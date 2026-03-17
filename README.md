@@ -12,20 +12,18 @@ Workflow:
 
 ### Why use it?
 
-#### For beginners
-
 - expose a model through an HTTP API
 - run it locally
 - package dependencies with the service
 - build a deployable artifact
 - containerize it without writing much backend code
-
-#### For more advanced users
-
 - adaptive batching
+- monitoring and metrics
+
+#### In result
+
 - better CPU/GPU utilization
 - production-oriented serving workflow
-- monitoring and metrics
 
 ### What is a Bento artifact?
 
